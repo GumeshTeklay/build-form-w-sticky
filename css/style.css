@@ -1,0 +1,151 @@
+:root {
+    --red: #dc413e;
+    --lt-gray: #c0c0c0;
+    --dk-gray: #e8e8e8;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-container,
+section {
+    padding: 1rem;
+    max-width: 1200px;
+}
+/* ************ typography ************ */
+h2,
+h3{
+    color: var(--red);
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 200;
+}
+h3{
+    font-size: 2.5rem;
+}
+p{
+    margin-bottom: 1.5rem;
+}
+/* ************ header ************ */
+/* TO DO: create a sticky header that will scroll until the nav links hit the top of the 
+viewport */
+header{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: -88.5px;
+}
+header svg{
+    width: 4.6875rem;
+    fill: #fff;
+}
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 0 0.5rem;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu a:hover,
+.menu a:active{
+    color: #dc413e;
+}
+.menu li{
+    line-height: 2.1875rem;
+    text-align: center;
+    flex: 1 0 50%;
+}
+
+h1{
+    position: sticky;
+    top: 0;
+}
+/* ************ form ************ */
+fieldset{
+    border: none;
+}
+label{
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.865rem;
+}
+form div{
+    margin-bottom: 1.5rem;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--lt-gray);
+    box-shadow: 2px 2px 3px var(--dk-gray);
+}
+textarea{
+    resize: vertical;
+    min-height: 18.75rem;
+}
+
+/* TO DO: resize the checkbox to 24px and place the label on the right */
+
+input[type=submit]{
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    transition: padding-left 1s ease;
+    text-align: left;
+    font-weight: bold;
+}
+input[type=submit]:hover{
+    cursor: pointer;
+    color: var(--red);
+    padding-left: 20px;
+}
+input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+}
+
+/* media quert for the header links only */
+@media only screen and (min-width: 450px){
+    .menu li{
+        /* auto is the keyword for the default, content width - resets the item
+        back to it's original width */
+        flex: 0 0 auto;
+    }
+}
+@media only screen and (min-width: 1260px){
+    .inner-container,
+    section {
+        max-width: 1200px;
+        padding: 1rem 0;
+        margin: 0 auto;
+    }
+    /* TO DO: on the wider screen adjust and layout the form to 2 equal columns
+    with a gutter space between them - see screenshot */
+    fieldset{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    input{
+        width: 33.75rem;
+    }
+    textarea {
+        min-width: 33.75rem;
+    }
+    form > div {
+        display: flex;
+        align-items: center;
+    }
+    .inner-container{
+        margin: 0 0 0 2.1563rem;
+    }
+}
